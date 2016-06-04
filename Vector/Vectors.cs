@@ -19,7 +19,10 @@
         // implementation enumeration interface
         public IEnumerator GetEnumerator()
         {
-            return ((IEnumerable<Vector<int>>)list).GetEnumerator();
+            for(int i = 0; i < list.Count; i++)
+            {
+                yield return list[i];
+            }
         }
 
         IEnumerator<Vector<int>> IEnumerable<Vector<int>>.GetEnumerator()
